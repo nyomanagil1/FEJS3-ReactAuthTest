@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { replace } from 'tar';
 import './login.css';
 
 function Login() {
@@ -21,7 +22,7 @@ function Login() {
 
       if (res.status === 200) {
         localStorage.setItem('token', res.data.token);
-        navigate('/');
+        navigate('/', { replace: true });
       }
     } catch (error) {
       console.log(error);
@@ -46,6 +47,12 @@ function Login() {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      navigate('/');
+    }
+  }, []);
 
   return (
     <>
