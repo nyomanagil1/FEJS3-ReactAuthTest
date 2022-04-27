@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Register from './pages/Register/Register';
 import Login from './pages/Login/Login';
 import Home from './pages/Home/Home';
+import Test from './pages/Test/Test';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
+        <Route path="test" element={<Test />} />
 
         {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit

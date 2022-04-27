@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function Home() {
+function Test() {
   const token = localStorage.getItem('token');
   const navigate = useNavigate();
 
@@ -10,7 +10,7 @@ function Home() {
       navigate('/login');
     }
   }, []);
-  return <div>Home</div>;
+  return <div>Test</div>;
 }
 
-export default Home;
+export default Test;
